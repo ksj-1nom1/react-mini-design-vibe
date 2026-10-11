@@ -1,0 +1,62 @@
+:root {
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+    --layout-max: 1240px;
+    --autumn-cream: color-mix(in srgb, var(--background-status-cautionary) 48%, var(--background-normal-alternative));
+    --autumn-apricot: color-mix(in srgb, var(--accent-background-red-orange) 14%, transparent);
+    --autumn-amber: color-mix(in srgb, var(--status-cautionary) 12%, transparent);
+    --autumn-leaf: color-mix(in srgb, var(--accent-foreground-red-orange) 28%, transparent);
+}
+
+* { box-sizing: border-box; }
+html, body, #root { min-height: 100%; margin: 0; }
+body {
+    position: relative;
+    color: var(--label-normal);
+    background:
+        radial-gradient(circle at 8% 4%, var(--autumn-apricot), transparent 28%),
+        radial-gradient(circle at 92% 18%, var(--autumn-amber), transparent 30%),
+        radial-gradient(circle at 72% 86%, var(--autumn-leaf), transparent 26%),
+        linear-gradient(145deg, var(--autumn-cream), var(--background-normal-alternative) 58%, var(--background-status-cautionary));
+    background-attachment: fixed;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 100% 0 100% 0;
+    filter: blur(.2px);
+}
+body::before {
+    top: 16%;
+    right: -48px;
+    width: 180px;
+    height: 72px;
+    background: var(--autumn-leaf);
+    transform: rotate(28deg);
+}
+body::after {
+    bottom: 12%;
+    left: -56px;
+    width: 220px;
+    height: 82px;
+    background: var(--autumn-amber);
+    transform: rotate(-24deg);
+}
+#root { position: relative; z-index: 1; }
+a { color: inherit; text-decoration: none; }
+button, input, select { font-family: inherit; }
+button { cursor: pointer; }
+::selection { color: var(--inverse-label); background: var(--primary-normal); }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}

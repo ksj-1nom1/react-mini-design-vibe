@@ -1,0 +1,21 @@
+.card { min-width: 0; overflow: hidden; border: 1px solid var(--line-normal-alternative); border-radius: var(--radius-lg); background: var(--background-elevated-normal); box-shadow: var(--shadow-normal-xsmall); transition: transform .2s ease, box-shadow .2s ease; animation: rise .45s ease both; animation-delay: calc(var(--order) * 45ms); }
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-normal-large); }
+.topline { padding: var(--space-16) var(--space-20) 0; display: flex; align-items: center; justify-content: space-between; gap: var(--space-8); }
+.code { color: var(--label-assistive); }.status { display: inline-flex; align-items: center; gap: var(--space-6); color: var(--label-alternative); }.status i { width: var(--space-6); height: var(--space-6); border-radius: var(--radius-full); }.on i { background: var(--status-positive); }.off i { background: var(--status-negative); }
+.illustration {
+    height: 164px;
+    margin: var(--space-12) var(--space-16);
+    overflow: hidden;
+    border: 1px solid var(--line-normal-alternative);
+    border-radius: var(--radius-md);
+    background-image: url('/menu-food-sprite.png');
+    background-repeat: no-repeat;
+    background-size: 600% 600%;
+    background-position: var(--sprite-x) var(--sprite-y);
+    box-shadow: inset 0 0 0 var(--space-1) var(--background-transparent-normal);
+    transition: transform .25s ease, filter .25s ease;
+}
+.card:hover .illustration { transform: scale(1.02); filter: saturate(1.08); }
+.content { padding: var(--space-4) var(--space-20) var(--space-20); }.category { color: var(--accent-foreground-green); }.content h3 { min-height: 52px; margin: var(--space-6) 0 var(--space-16); word-break: keep-all; }
+.priceRow { padding-top: var(--space-14); display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line-normal-alternative); }.arrow { width: 32px; height: 32px; display: grid; place-items: center; border-radius: var(--radius-full); background: var(--fill-alternative); transition: transform .2s; }.card:hover .arrow { transform: rotate(45deg); }
+@keyframes rise { from { opacity: 0; transform: translateY(var(--space-8)); } }

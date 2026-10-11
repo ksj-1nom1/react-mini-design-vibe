@@ -1,0 +1,4 @@
+.pagination { padding-top: var(--space-32); display: flex; justify-content: center; align-items: center; gap: var(--space-4); }
+.pagination button { min-width: 36px; height: 36px; padding: 0 var(--space-10); border: 0; border-radius: var(--radius-full); color: var(--label-alternative); background: transparent; cursor: pointer; }
+.pagination button:hover:not(:disabled) { color: var(--label-normal); background: var(--fill-alternative); }.pagination button:disabled { opacity: .35; cursor: default; }.pagination .active { color: var(--inverse-label); background: var(--label-normal); }
+.unit { display: flex; align-items: center; gap: var(--space-4); }.unit i { color: var(--label-assistive); font-style: normal; }
